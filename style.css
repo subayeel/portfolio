@@ -1,0 +1,297 @@
+:root {
+  --primary: #b3c99c;
+  --secondary: #c7e9b0;
+  --darkPrimary: #a4bc92;
+  --background: #ddffbb;
+}
+
+body {
+  background-color: #eee;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+  padding: 0 1rem;
+}
+.page {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Containers */
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  place-content: center;
+  justify-content: center;
+  align-items: center;
+}
+/* Wrapper styling */
+.wrapper {
+  display: grid;
+  grid-template-columns: max-content 4fr;
+  height: 100vh;
+  max-width: 1170px;
+  margin: auto;
+}
+@media screen and (max-width: 758px) {
+  .wrapper {
+    height: auto;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  aside {
+    height: auto;
+  }
+}
+/* Aside styling */
+aside {
+  background-color: var(--primary);
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding: 3rem 1rem;
+  align-items: center;
+  overflow-y: auto;
+}
+.profile-image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 0 3rem 2rem 3rem;
+}
+.heading {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0 0 4px 0;
+  font-weight: 800;
+  color: #fff;
+}
+.desc {
+  color: #141414;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0 0 1rem 0;
+}
+.custom-navbar > ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.custom-navbar > ul > li {
+  position: relative;
+  margin: 0 0 15px 0;
+  letter-spacing: 1px;
+  padding: 0;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6c6c6c;
+}
+.custom-navbar > ul > li > a {
+  position: relative;
+  color: #252525;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.custom-navbar > ul > li > a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #303030;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.custom-navbar > ul > li > a:hover {
+  /* font-weight: 600; */
+  color: black;
+}
+.custom-navbar > ul > li > a:hover::before {
+  transform: scaleX(1);
+}
+
+@keyframes anchor-underline {
+  0%,
+  10% {
+    left: 0;
+    right: 100%;
+  }
+  40%,
+  60% {
+    left: 0;
+    right: 0;
+  }
+  90%,
+  100% {
+    left: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+}
+/* Main Styling */
+main {
+  /* padding: 0 1em; */
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+#home {
+  min-height: 100vh;
+
+  margin-bottom: 10em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  background-color: var(--background);
+  /* background: url(./assets/bg.png) no-repeat; */
+  background-position: center;
+}
+
+.hero-text-container {
+  padding: 2em 0;
+  animation: drag-up 0.5s ease-in-out;
+
+  /* background-color: rgba(0, 0, 0, 0.05); */
+}
+
+.hero-title {
+  font-size: 48px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  margin: 0;
+  color: #2f2e41;
+}
+.hero-btn {
+  display: flex;
+
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: #63a13e;
+  color: white;
+}
+.hero-desc {
+  color: #6c6c6c;
+  margin: 0 0 10px 0;
+}
+@keyframes drag-up {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* About Us Section */
+
+.light-heading {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  color: #6c6c6c;
+  margin: 0 0 10px 0;
+  letter-spacing: 2px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 10px 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Services */
+.service-card {
+  margin: 2rem auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #141414;
+  color: #a4bc92;
+  padding: 1rem;
+}
+
+/* SKills */
+.skill-box {
+  margin-top: 100px;
+  width: 100%;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.skill-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 200px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.skill-card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.skill-badge {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: #2c98f0;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.skill-badge::after,
+.skill-badge::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  content: "";
+}
+.skill-badge::before {
+  top: -30px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 50px 30px 50px;
+  border-color: transparent transparent #b3c99c transparent;
+}
+.skill-badge::after {
+  bottom: -30px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 30px 50px 0 50px;
+  border-color: #b3c99c transparent transparent transparent;
+}
+.skill-desc {
+  margin-top: 50px;
+}

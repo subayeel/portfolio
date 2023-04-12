@@ -121,6 +121,7 @@ aside {
   right: 2rem;
   top: 2rem;
 }
+
 @media screen and (max-width: 758px) {
   .wrapper {
     height: auto;
@@ -132,7 +133,13 @@ aside {
     overflow: hidden;
   }
   .side-menu {
-    height: auto;
+    height: 0px;
+    padding: 0;
+    transition: 0.2s ease-in-out;
+  }
+  .expanded-side-menu {
+    height: 550px;
+    padding: 2rem;
   }
   .menu-icon {
     display: block;
@@ -165,6 +172,10 @@ main {
   /* padding: 0 1em; */
   background-color: #fff;
   overflow-y: auto;
+  scroll-behavior: smooth;
+}
+main::-webkit-scrollbar {
+  display: none;
 }
 
 #home {
@@ -441,7 +452,7 @@ details[open] summary ~ * {
   .contact-card {
     grid-template-columns: 1fr;
   }
-  .contact-card a{
+  .contact-card a {
     font-size: 16px;
   }
 }

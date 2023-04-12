@@ -17,7 +17,7 @@
     <div class="page">
         <div class="wrapper">
 
-            <aside class="side-menu">
+            <aside class="side-menu ">
                 <img class="profile-image" src="./assets/profile.jpg" alt="">
                 <h1 class="heading">Abdulla Subayeel</h1>
                 <p class="desc">Computer Engineer</p>
@@ -57,7 +57,7 @@
                         unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
                         decided to leave for the far World of Grammar.
                     </p>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="card col-sm-12 col-md-3 m-1">
                             <div class="card-header">
                                 Graphic Design
@@ -90,7 +90,7 @@
                                 <div class="card-text"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class=" rounded service-card">
                         <h2 class="title">I am happy to let you know <br> 30+ Projects Done successfully! </h2>
                         <button type="button" class="btn btn-secondary btn-lg">Hire Me</button>
@@ -324,9 +324,8 @@
                     <div class="contact-card">
                         <div class="contact-icon"><i class="fa-solid fa-envelope fa-xl"></i></div>
                         <div class="light-heading m-0"><a class="d-flex flex-wrap-wrap"
-                
                                 href="mailto:abdullahsubayeel999@gmail.com">abdullahsubayeel999@gmail.com</a>
-                            </div>
+                        </div>
                     </div>
                     <div class="contact-card">
                         <div class="contact-icon"><i class="fa-solid fa-phone fa-xl"></i></div>
@@ -343,14 +342,12 @@
     </div>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script>
-        function classToggle() {
-            const navs = document.querySelectorAll('.Navbar__Items')
+        const toggleBtn = document.querySelector(".menu-icon");
+        const sideBar = document.querySelector(".side-menu");
 
-            navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
-        }
-
-        document.querySelector('.menu-icon')
-            .addEventListener('click', classToggle);
+        toggleBtn.addEventListener("click", () => {
+            sideBar.classList.toggle("expanded-side-menu")
+        })
     </script>
 </body>
 
